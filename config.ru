@@ -7,5 +7,7 @@ end
 
 
 use Rack::MethodOverride
-
+use UserController
+use CategoryController
+use DrillController
 run ApplicationController
