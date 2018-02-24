@@ -46,7 +46,13 @@ class DrillController < ApplicationController
   end
 
   get '/drills/:id/edit' do
-
+    @drill = Drill.find(params[:id])
+    if logged_in? && @drill.user_id == current_user.id
+      erb :'/drills/edit_drill'
+    else
+      flash[:message] = "You do not have permission to edit another user's drill!"
+      redirect '/login'
+    end
   end
 
   patch '/drills/:id' do
