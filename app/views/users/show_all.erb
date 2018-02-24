@@ -1,0 +1,8 @@
+
+<h6><%= @user.slug %>'s drills: </h6>
+
+<% @drills.all.each do |drill| %>
+  Category: <a href="/categories/<%= drill.categories.first.name %>"><%= drill.categories.first.name %></a>
+  <p>Title: <a href="/drills/<%= drill.id %>"> <%= drill.title %></a></p>
+  <p><%= drill.content %></p>
+<% end %>
