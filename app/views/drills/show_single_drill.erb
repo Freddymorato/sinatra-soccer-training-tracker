@@ -1,0 +1,7 @@
+
+<h6>Logged-in as: <%= current_user.slug %></h6>
+
+User: <a href="/users/<%= @drill.user.slug %>"><%= @drill.user.username %></a><br>
+Category: <a href="/categories/<%= @drill.categories.first.name %>"><%= @drill.categories.first.name %></a>
+<p>Title: <%= @drill.title %></p>
+<p><%= @drill.content %></p>
