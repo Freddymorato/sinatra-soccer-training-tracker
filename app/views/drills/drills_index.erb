@@ -4,3 +4,14 @@
     <li><a href="/categories/<%= category %>"> <%= category %></a></li>
   <% end %>
 </ul>
+
+<p>Drills feed:</p>
+
+<% if Drill.any? %>
+  <% @drills.each do |drill| %>
+    User: <a href="/users/<%= drill.user.slug %>"><%= drill.user.username %></a><br>
+    Category: <a href="/categories/<%= drill.categories.first.name %>"><%= drill.categories.first.name %></a>
+    <p>Title: <a href="/drills/<%= drill.id %>"> <%= drill.title %></a></p>
+    <p><%= drill.content %></p>
+  <% end %>
+<% end %>

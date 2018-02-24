@@ -7,7 +7,8 @@ class DrillController < ApplicationController
   get '/drills' do
     if logged_in?
       @categories = ["Shooting", "Passing", "Heading", "Tackling", "Dribbling", "Conditioning"]
-    
+      @drills = Drill.all
+      @drills.order! 'created_at DESC'
       erb :'/drills/drills_index'
     else
       redirect '/login'
