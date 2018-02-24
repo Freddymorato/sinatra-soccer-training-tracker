@@ -36,22 +36,24 @@ class DrillController < ApplicationController
   end
 
   get '/drills/:id' do
-    if logged_in? 
+    if logged_in?
       @drill = Drill.find_by_id(params[:id])
+      erb :'/drills/show_single_drill'
     else
+      flash[:message] = "You cannot view that page until you have logged in. Please login to continue."
       redirect '/login'
-    end  
+    end
   end
 
   get '/drills/:id/edit' do
-    
+
   end
 
   patch '/drills/:id' do
-    
+
   end
 
   delete '/drills/:id/delete' do
-    
+
   end
 end
