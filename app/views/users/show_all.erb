@@ -1,4 +1,9 @@
 
+<div class="nav-bar">
+  <button type="button" class="nav-button"><a href="/logout">Logout</a></button>
+  <button type="button" class="nav-button"><a href="/drills/new">Create drill</a></button>
+</div>
+
 <h6><%= @user.slug %>'s drills: </h6>
 
 <% @drills.all.each do |drill| %>
