@@ -5,4 +5,11 @@ class User < ActiveRecord::Base
   has_many :categories, through: :drills
 
 
+  def slug
+    self.username.gsub(/\s/, '-').downcase
+  end
+
+  def self.find_by_slug(slug)
+    self.all.find{|a| a.slug == slug}
+  end
 end
