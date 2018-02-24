@@ -69,10 +69,22 @@ body {
   background-color: #D2FAB4;
 }
 
-
 img.crest {
 float: left;
 margin-right: 2%;
+}
+
+img.left-image {
+margin-top: 4%;
+margin-left: 5%;
+margin-right: 5%;
+}
+
+img.right-image {
+float: right;
+margin-top: 5%;
+margin-left: 60%;
+margin-right: 5%;
 }
 
 #flash-msg {
