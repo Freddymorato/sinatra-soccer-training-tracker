@@ -1,4 +1,14 @@
 
+<div class="nav-bar">
+  <button type="button" class="nav-button"><a href="/logout">Logout</a></button>
+  <button type="button" class="nav-button"><a href="/drills/new">Create drill</a></button>
+  <button type="button" class="nav-button"><a href="/users/<%= current_user.slug %>">My drills</a></button>
+</div>
+
+<h6>Welcome, <%= current_user.slug %>!</h6>
+
+<p class="p-1">View different training drills by category:</p>
+
 <ul>
   <% @categories.each do |category| %>
     <li><a href="/categories/<%= category %>"> <%= category %></a></li>
