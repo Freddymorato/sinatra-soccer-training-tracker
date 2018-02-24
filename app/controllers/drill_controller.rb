@@ -2,7 +2,11 @@
 class DrillController < ApplicationController 
 
   get '/drills' do
-    
+    if logged_in?
+      erb:'/drills/drills_index'
+    else
+      redirect '/login'
+    end
   end
 
   get '/drills/new' do
