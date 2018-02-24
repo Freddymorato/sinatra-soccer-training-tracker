@@ -56,7 +56,16 @@ class DrillController < ApplicationController
   end
 
   patch '/drills/:id' do
-
+    if params[:title] == "" || params[:content] == ""
+      redirect "/drill/#{params[:id]}/edit"
+    else
+      @drill = Drill.find(params[:id])
+      @drill.title = params[:title]
+      @drill.content = params[:content]
+      @drill.save
+      flash[:message] = "Drill successfully updated."
+      redirect "/drills/#{@drill.id}"
+    end
   end
 
   delete '/drills/:id/delete' do
