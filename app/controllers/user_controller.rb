@@ -51,7 +51,8 @@ class UserController < ApplicationController
   get '/users/:slug' do
     if logged_in?
       @user = User.find_by_slug(params[:slug])
-
+      @drills = @user.drills
+      @drills.order! 'created_at DESC'
       erb :'/users/show_all'
     else
       redirect '/login'
