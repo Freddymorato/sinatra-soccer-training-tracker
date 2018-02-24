@@ -3,10 +3,10 @@ You can also view drills posted by other players and coaches.
 
 This app was built using Ruby and Sinatra.
 
-To use this app, clone down the repository, cd into the app directory, then run bundle install to ensure you have all
-the proper gems installed and ready to use. Then, run rake db:migrate and rake db:seed to setup the database.
+To use this app, clone down the repository, cd into the app directory, then run `bundle install` to ensure you have all
+the proper gems installed and ready to use. Then, run rake `rake db:migrate` and rake `db:seed` to setup the database.
 
-After that is complete you should be able to type shotgun to launch the app on the default port.
+After that is complete you should be able to type `shotgun` to launch the app on the default port.
 
 ## License
 
