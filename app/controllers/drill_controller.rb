@@ -1,8 +1,13 @@
+require 'pry'
+require 'rack-flash'
 
-class DrillController < ApplicationController 
+class DrillController < ApplicationController
+  use Rack::Flash
 
   get '/drills' do
     if logged_in?
+      @categories = ["Shooting", "Passing", "Heading", "Tackling", "Dribbling", "Conditioning"]
+    
       erb :'/drills/drills_index'
     else
       redirect '/login'
