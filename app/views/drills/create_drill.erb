@@ -1,0 +1,17 @@
+
+<p>Please fill in all fileds in order to create a drill:</p>
+
+<form method="POST" action='/drills'>
+  <label> What would you like to name your drill?</label><br>
+  <input type="text" name="user[drill][title]" placeholder="Title:"></input><br></br>
+
+  <label> Describe the drill in full!</label><br>
+  <textarea type="text" name="user[drill][content]" placeholder="Content:"></textarea><br></br>
+
+  <label>What category does this drill belong to?</label><br>
+  <% Category.all.each do |cat| %>
+    <input type="radio" name="user[drill][categories][name]" id="<%= cat.id %>" value="<%= cat.name %>"><%= cat.name %></input><br>
+  <% end %><br>
+
+  <input type="submit" value="Create drill">
+</form>

@@ -16,7 +16,7 @@ class DrillController < ApplicationController
 
   get '/drills/new' do
     if logged_in?
-      erb :'/drills/create_drills'
+      erb :'/drills/create_drill'
     else
       redirect '/login'
     end
