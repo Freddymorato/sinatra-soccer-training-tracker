@@ -1,0 +1,18 @@
+
+<p> Edit drill:</p>
+
+Category: <%= @drill.categories.first.name %>
+<p>Title: <%= @drill.title %></p>
+<p><%= @drill.content %></p>
+
+
+<form method="POST" action="/drills/<%= @drill.id %>">
+  <input type="hidden" name="_method" value="patch">
+  <label> What would you like to name your drill?</label><br>
+  <input type="text" name="title" id="content"  placeholder="Title:"></input><br></br>
+
+  <label> Describe the drill in full!</label><br>
+  <textarea type="text" name="content" id="content" placeholder="Content:"></textarea><br></br>
+
+  <input type="submit" value="Edit drill">
+</form>
