@@ -1,4 +1,9 @@
 
+<div class="nav-bar">
+  <button type="button" class="nav-button"><a href="/logout">Logout</a></button>
+  <button type="button" class="nav-button"><a href="/users/<%= current_user.slug %>">My drills</a></button>
+</div>
+
 <p>Please fill in all fileds in order to create a drill:</p>
 
 <form method="POST" action='/drills'>
