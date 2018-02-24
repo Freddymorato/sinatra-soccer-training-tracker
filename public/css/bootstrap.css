@@ -89,6 +89,25 @@ padding: 2%;
 padding-left: 3%;
 }
 
+.nav-bar {
+position: absolute;
+left: 2%;
+right: 2%;
+top: 133px;
+width: auto;
+height: 38px;
+background-color: #fff;
+border-radius: 1px;
+border-top: 2.4px dashed black;
+padding-top: 7px;
+padding-right: 15px;
+}
+
+.nav-button {
+float: right;
+margin-right: 7px;
+}
+
 img.crest {
 float: left;
 margin-right: 2%;
