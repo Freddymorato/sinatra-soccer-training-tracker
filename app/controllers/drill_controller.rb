@@ -24,7 +24,15 @@ class DrillController < ApplicationController
   end
 
   post '/drills' do
-    
+    if params[:user][:drill][:title] == "" || params[:user][:drill][:content] == "" || params[:user][:drill][:categories][:name] == ""
+       flash[:message] = "You have left one or more fields blank. Please try again."
+       redirect '/drills/new'
+    else
+       @drill = current_user.drills.create(:title => params[:user][:drill][:title], :content => params[:user][:drill][:content])
+       category = Category.find_by(:name => params[:user][:drill][:categories][:name])
+       @drill.categories << category
+     end
+     redirect "/categories/#{@drill.categories.first.name}"
   end
 
   get '/drills/:id' do
