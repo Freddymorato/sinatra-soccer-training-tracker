@@ -35,7 +35,17 @@ class UserController < ApplicationController
   end
 
   post '/login' do
-
+    @user = User.find_by(username: params[:username])
+    if params[:username] == "" || params[:password] == ""
+      flash[:message] = "You have left one or more fields blank. Please try again."
+      redirect '/login'
+    elsif @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      redirect '/drills'
+    else
+      flash[:message] = "You have entered an incorrect password/username. Please try again, or create an account."
+      redirect '/login'
+    end
   end
 
   get '/users/:slug' do
