@@ -69,6 +69,14 @@ class DrillController < ApplicationController
   end
 
   delete '/drills/:id/delete' do
-
+    @drill = Drill.find(params[:id])
+    if logged_in? && current_user.id ==  @drill.user_id
+      @drill.delete
+      flash[:message] = "Drill successfully deleted!"
+      redirect "/users/#{current_user.username}"
+    else
+      flash[:message] = "You do not have permission to delete another user's drill!"
+      redirect '/login'
+    end
   end
 end
