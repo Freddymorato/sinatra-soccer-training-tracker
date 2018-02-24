@@ -1,0 +1,9 @@
+
+<% if Drill.any? %>
+<h6><%= @category.name %> drills:</h6>
+  <% @drills.all.each do |drill| %>
+    User: <a href="/users/<%= drill.user.slug %>"><%= drill.user.username %></a><br>
+    <p>Title: <a href="/drills/<%= drill.id %>"> <%= drill.title %></a></p>
+    <p><%= drill.content %></p>
+  <% end %>
+<% end %>
