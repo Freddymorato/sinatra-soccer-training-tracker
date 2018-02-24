@@ -9,4 +9,17 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "soccer"
   end
 
+  get '/' do
+    erb :index
+  end
+
+  helpers do 
+    def current_user
+      User.find(session[:user_id])
+    end
+    
+    def logged_in?
+      !!session[:user_id]
+    end
+  end
 end
