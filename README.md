@@ -1,3 +1,5 @@
+## Instructions
+
 Soccer Training Tracker is an app that helps you organize and keep track of all your soccer training drills.
 You can also view drills posted by other players and coaches.
 
