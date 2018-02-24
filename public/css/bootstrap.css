@@ -126,6 +126,17 @@ margin-left: 60%;
 margin-right: 5%;
 }
 
+.right-star {
+float: right;
+margin-top: 6%;
+margin-right: 9%;
+}
+
+.left-star {
+margin-top: 6%;
+margin-left: 7%;
+}
+
 #flash-msg {
 position: absolute;
 width: auto;
