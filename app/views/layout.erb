@@ -5,6 +5,16 @@
   </head>
   <body>
 
+    <div class="container-main">
+      <a href="/"><img src="/img/crest.jpg" class="crest" alt="crest" width="17%" height="17%"></a>
+      <h1>Soccer Training Tracker</h1>
+
+      <div id="flash-msg">
+        <% if flash.has?(:message) %>
+          <%= flash[:message] %>
+        <% end %>
+      </div>
+
     <%= yield %>
 
 
